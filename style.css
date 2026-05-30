@@ -1,0 +1,13 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+.container {
+    display: flex;
+    border: 2px solid white;
+    margin:100px 100px;
+    width: 500px; 
+    height: 500px;
+}
