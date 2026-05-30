@@ -17,7 +17,7 @@ container.addEventListener("mousemove",(e) => {
     let target = document.getElementById(e.target.id);
 
     target.style.background = "red";
-    target.addEventListener("mouseleave", () => {
-        target.style.background = "white";
-    });
+    // target.addEventListener("mouseleave", () => {
+    //     target.style.background = "white";
+    // });
 });
