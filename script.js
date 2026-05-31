@@ -54,8 +54,11 @@ container.addEventListener("mousemove",(e) => {
         let g = Math.floor(Math.random() * 256);
         let b = Math.floor(Math.random() * 256);
     
-        target.style.background = `rgb(${r}, ${g}, ${b})`;
+        target.style.background= `rgba(${r}, ${g}, ${b})`;
+        target.style.opacity = "1.0";
     }
+
+    target.style.opacity = `${target.style.opacity - 0.1}`;
 });
 
 btn.addEventListener("click", (e) => {
@@ -64,25 +67,23 @@ btn.addEventListener("click", (e) => {
     let validInput = false;
     do {
         gridWidth = Number(prompt("Width of the grid (1 - 50)", "16"));
-        console.log(`width input: ${gridWidth}`);
         validInput = (gridWidth <= MAX_GRID_WIDTH && gridWidth >= MIN_GRID_WIDTH) 
     } while (!validInput)
         
-        validInput = false;
-        do {
-            gridHeight = Number(prompt("Height of the grid (1 - 50)", "16"));
-            console.log(`height input: ${gridHeight}`);
-            validInput = (gridHeight <= MAX_GRID_WIDTH && gridHeight >= MIN_GRID_WIDTH) 
-        } while (!validInput)
-            
-            if (container.hasChildNodes()) { 
-                deleteGrid(); 
-            }
-            
-            // Unfocus button`
-            e.target.blur();
-            
-            setGridValue();
-            
-            createGrid();
+    validInput = false;
+    do {
+        gridHeight = Number(prompt("Height of the grid (1 - 50)", "16"));
+        validInput = (gridHeight <= MAX_GRID_WIDTH && gridHeight >= MIN_GRID_WIDTH) 
+    } while (!validInput)
+        
+    if (container.hasChildNodes()) { 
+        deleteGrid(); 
+    }
+    
+    // Unfocus button
+    e.target.blur();
+    
+    setGridValue();
+    
+    createGrid();
 });
