@@ -48,8 +48,14 @@ function deleteGrid() {
 
 container.addEventListener("mousemove",(e) => {
     let target = document.getElementById(e.target.id);
+
+    if (target.style.background == "white") {
+        let r = Math.floor(Math.random() * 256);
+        let g = Math.floor(Math.random() * 256);
+        let b = Math.floor(Math.random() * 256);
     
-    target.style.background = "red";
+        target.style.background = `rgb(${r}, ${g}, ${b})`;
+    }
 });
 
 btn.addEventListener("click", (e) => {
